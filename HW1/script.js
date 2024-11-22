@@ -5,14 +5,12 @@ const historicalData = {
   ADA: [0.20, 0.35, 0.30, 0.40, 0.29, 0.29],         // Cardano
 };
 
-// References to DOM elements
 const cryptoSelect = document.getElementById('crypto-select');
 const highestPriceElement = document.getElementById('highest-price');
 const lowestPriceElement = document.getElementById('lowest-price');
 const averagePriceElement = document.getElementById('average-price');
 const ctx = document.getElementById('price-chart').getContext('2d');
 
-// Variable to hold the Chart.js instance
 let priceChart;
 
 // Function to calculate statistics (highest, lowest, average)
