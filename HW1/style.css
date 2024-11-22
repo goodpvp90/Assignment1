@@ -8,6 +8,6 @@ body {
 
 /* Fixed height for the chart */
 #price-chart {
-  height: 400px; /* Set a fixed height */
-  width: 100%; /* Make it responsive */
+  height: 400px; 
+  width: 100%;
 }
