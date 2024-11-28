@@ -13,7 +13,7 @@ const ctx = document.getElementById('price-chart').getContext('2d');
 
 let priceChart;
 
-// Function to calculate statistics (highest, lowest, average)
+// Calculate statistics (highest, lowest, average)
 function calculateStatistics(data) {
   const highest = Math.max(...data);
   const lowest = Math.min(...data);
@@ -21,7 +21,7 @@ function calculateStatistics(data) {
   return { highest, lowest, average };
 }
 
-// Function to populate the crypto price table with fake data
+// Set the crypto price table with fake data
 function populateCryptoTable() {
   const cryptoData = [
     { name: 'Bitcoin', symbol: 'BTC', price: 56321 },
@@ -41,7 +41,7 @@ function populateCryptoTable() {
   });
 }
 
-// Function to create and update the chart
+// Create and update the chart
 function createChart(crypto) {
   // Destroy the previous chart if it exists
   if (priceChart) {
@@ -72,7 +72,7 @@ function createChart(crypto) {
     },
     options: {
       responsive: true,
-      maintainAspectRatio: true,  // Maintain aspect ratio of the chart
+      maintainAspectRatio: true,
       plugins: {
         legend: {
           display: true,
@@ -96,5 +96,5 @@ cryptoSelect.addEventListener('change', (e) => {
   createChart(e.target.value);
 });
 
-// Initial population of the crypto price table with fake data
+// Set the crypto price table with fake data
 populateCryptoTable();
