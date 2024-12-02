@@ -10,10 +10,17 @@ const highestPriceElement = document.getElementById('highest-price');
 const lowestPriceElement = document.getElementById('lowest-price');
 const averagePriceElement = document.getElementById('average-price');
 const ctx = document.getElementById('price-chart').getContext('2d');
+const toggleDarkModeButton = document.getElementById('toggle-dark-mode');
+const htmlElement = document.documentElement;
 
 let priceChart;
 
-// Calculate statistics (highest, lowest, average)
+// Toggle dark mode
+toggleDarkModeButton.addEventListener('click', () => {
+  htmlElement.classList.toggle('dark');
+});
+
+// Calculate statistics
 function calculateStatistics(data) {
   const highest = Math.max(...data);
   const lowest = Math.min(...data);

@@ -6,28 +6,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Crypto Price Dashboard</title>
   <script src="https://cdn.tailwindcss.com"></script>
-
+  <script>
+    // Enable dark mode via TailwindCSS
+    tailwind.config = {
+      darkMode: 'class',
+    };
+  </script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
-<body class="bg-gray-100 font-sans">
+<body class="bg-gray-100 font-sans transition-colors duration-300 dark:bg-gray-800 dark:text-gray-200">
 
-  <div class="container mx-auto p-4">
+  <div class="container mx-auto p-4 relative">
+    <!-- Dark Mode Button -->
+    <button 
+      id="toggle-dark-mode" 
+      class="px-4 py-2 bg-gray-800 text-white text-sm sm:text-base rounded dark:bg-gray-200 dark:text-gray-800 
+      sm:top-4 sm:right-4 md:px-6 md:py-3 md:text-base">
+      Dark Mode
+    </button>
+
     <header class="text-center mb-8">
-      <h1 class="text-3xl font-bold text-gray-800">Cryptocurrency Price Dashboard</h1>
-      <p class="text-gray-600 mt-2">View cryptocurrency prices and their historical data.</p>
+      <h1 class="text-3xl font-bold text-gray-800 dark:text-gray-100">Cryptocurrency Price Dashboard</h1>
+      <p class="text-gray-600 mt-2 dark:text-gray-400">View cryptocurrency prices and their historical data.</p>
     </header>
 
     <!-- Price Table -->
     <section id="crypto-table" class="mb-8">
       <h2 class="text-xl font-semibold mb-4">Current Prices</h2>
-      <div class="overflow-x-auto bg-white p-4 rounded shadow-md">
+      <div class="overflow-x-auto bg-white p-4 rounded shadow-md dark:bg-gray-700 dark:text-gray-200">
         <table class="min-w-full table-auto">
           <thead>
-            <tr class="bg-gray-100">
-              <th class="py-2 px-4 text-left text-gray-600">Cryptocurrency</th>
-              <th class="py-2 px-4 text-left text-gray-600">Symbol</th>
-              <th class="py-2 px-4 text-right text-gray-600">Price (USD)</th>
+            <tr class="bg-gray-100 dark:bg-gray-600">
+              <th class="py-2 px-4 text-left text-gray-600 dark:text-gray-300">Cryptocurrency</th>
+              <th class="py-2 px-4 text-left text-gray-600 dark:text-gray-300">Symbol</th>
+              <th class="py-2 px-4 text-right text-gray-600 dark:text-gray-300">Price (USD)</th>
             </tr>
           </thead>
           <tbody id="crypto-table-body">
@@ -39,11 +52,11 @@
     <!-- Price History Graph -->
     <section id="crypto-graph" class="mb-8">
       <h2 class="text-xl font-semibold mb-4">Price History (Fake Data)</h2>
-      <div class="bg-white p-4 rounded shadow-md">
+      <div class="bg-white p-4 rounded shadow-md dark:bg-gray-700">
         <!-- Select cryptocurrency -->
         <div class="mb-4">
-          <label for="crypto-select" class="block text-gray-600 mb-2">Select Cryptocurrency:</label>
-          <select id="crypto-select" class="w-full p-2 border rounded">
+          <label for="crypto-select" class="block text-gray-600 mb-2 dark:text-gray-300">Select Cryptocurrency:</label>
+          <select id="crypto-select" class="w-full p-2 border rounded dark:bg-gray-600 dark:text-gray-200 dark:border-gray-500">
             <option value="BTC">Bitcoin (BTC)</option>
             <option value="ETH">Ethereum (ETH)</option>
             <option value="ADA">Cardano (ADA)</option>
@@ -60,6 +73,7 @@
     </section>
   </div>
 
+  <!-- External JavaScript -->
   <script src="script.js"></script>
 </body>
 
